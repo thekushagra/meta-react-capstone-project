@@ -1,0 +1,15 @@
+.menu-card {
+	width: calc(33% - 14px);
+}
+
+@media screen and (max-width: 997px) {
+	.menu-card {
+		width: calc(50% - 12px);
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.menu-card {
+		width: 100%;
+	}
+}
