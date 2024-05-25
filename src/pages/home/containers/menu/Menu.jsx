@@ -24,7 +24,7 @@ export const Menu = () => {
 	return (
 		<Box
 			as='section'
-			className='hero-section'
+			className='menu-section'
 			id='menu'
 			backgroundColor='#FFF'
 		>

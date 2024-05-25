@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Container, Flex, Text, Image, Button } from '@chakra-ui/react';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 import heroImage from '../../../../assets/images/little-lemon-restaurant.jpg';
 
@@ -7,7 +8,12 @@ export const Hero = () => {
 	return (
 		<Box as='section' className='hero-section' backgroundColor='#495E57'>
 			<Container maxW='1180px' padding='80px 10px' margin='0 auto'>
-				<Flex flexDir='row' alignItems='center' gap='25px 40px'>
+				<Flex
+					flexDir='row'
+					flexWrap='wrap'
+					alignItems='center'
+					gap='25px 40px'
+				>
 					<Box flexGrow='1'>
 						<Text
 							as='h1'
@@ -46,10 +52,14 @@ export const Hero = () => {
 						</Text>
 
 						<Button
+							as={ReactRouterLink}
+							to='/book'
 							fontSize='18px'
 							padding='10px 25px'
 							borderRadius='8px'
+							textDecor='none'
 							backgroundColor='#F4CE14'
+							color='inherit'
 							cursor='pointer'
 						>
 							Reserve A Table

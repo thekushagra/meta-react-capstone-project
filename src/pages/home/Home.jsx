@@ -1,11 +1,12 @@
 import React from 'react';
-import { Hero, Menu } from './containers';
+import { Hero, Menu, About } from './containers';
 
 export const Home = () => {
 	return (
 		<>
 			<Hero />
 			<Menu />
+			<About />
 		</>
 	);
 };

@@ -7,15 +7,19 @@ export const Header = () => {
 	const navLinks = [
 		{
 			name: 'Home',
-			ref: '#home',
+			ref: '/#home',
 		},
 		{
 			name: 'Menu',
-			ref: '#menu',
+			ref: '/#menu',
 		},
 		{
 			name: 'About',
-			ref: '#about',
+			ref: '/#about',
+		},
+		{
+			name: 'Book A Table',
+			ref: '/book',
 		},
 	];
 
