@@ -1,8 +1,10 @@
-import React, { useState, useReducer } from 'react';
-import { Box, Container, Flex, Text } from '@chakra-ui/react';
+import React, { useReducer } from 'react';
+import { Box, Container, Text } from '@chakra-ui/react';
 import { BookingForm } from './component/BookingForm';
 
 export const Book = () => {
+	// const [initialAvailableTimes, setInitialAvailableTimes] = useState([]);
+
 	const initialAvailableTimes = [
 		{
 			id: 1,
@@ -35,7 +37,7 @@ export const Book = () => {
 		switch (action.type) {
 			case 'booked':
 				return state.map((item) => {
-					if (item.id === action.id) {
+					if (item.time === action.time) {
 						return { ...item, booked: !item.booked };
 					} else {
 						return item;
@@ -48,7 +50,7 @@ export const Book = () => {
 	};
 
 	const handleAvailableTimes = (item) => {
-		dispatch({ type: 'booked', id: item.id });
+		dispatch({ type: 'booked', time: item });
 	};
 
 	const [availableTimes, dispatch] = useReducer(
@@ -56,9 +58,9 @@ export const Book = () => {
 		initialAvailableTimes
 	);
 
-	const [date, setDate] = useState('');
-	const [guests, setGuests] = useState('');
-	const [occasion, setOccasion] = useState('');
+	// const [date, setDate] = useState('');
+	// const [guests, setGuests] = useState('');
+	// const [occasion, setOccasion] = useState('');
 
 	return (
 		<Box
@@ -81,11 +83,8 @@ export const Book = () => {
 
 				<Box>
 					<BookingForm
-						setDate={setDate}
 						availableTimes={availableTimes}
 						handleAvailableTimes={handleAvailableTimes}
-						setGuests={setGuests}
-						setOccasion={setOccasion}
 					/>
 				</Box>
 			</Container>

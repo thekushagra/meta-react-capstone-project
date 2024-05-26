@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 
 import './bookingForm.scss';
@@ -20,9 +20,9 @@ export const BookingForm = ({
 		onSubmit: (values) => {
 			alert(JSON.stringify(values, null, 2));
 
-			setDate(() => values.date);
-			setGuests(() => values.guests);
-			setOccasion(() => values.occasion);
+			// setDate(() => values.date);
+			// setGuests(() => values.guests);
+			// setOccasion(() => values.occasion);
 			handleAvailableTimes(values.time);
 
 			console.log(JSON.stringify(values, null, 2));
@@ -53,7 +53,7 @@ export const BookingForm = ({
 					Date
 				</option>
 				{availableTimes.map((item) => {
-					if (item.booked == false) {
+					if (item.booked === false) {
 						return (
 							<option
 								key={item.id}
